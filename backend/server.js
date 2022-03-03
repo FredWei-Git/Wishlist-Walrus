@@ -22,6 +22,14 @@ connection.once('open', () => {
     console.log("MongoDB database connection established successfully");
 })
 
+// use the route files
+const itemsRouter = require('./routes/items');
+const usersRouter = require('./routes/users');
+
+// add the files as middleware
+app.use('/items', itemsRouter);
+app.use('/users', usersRouter);
+
 // starts server/listening to a port
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
