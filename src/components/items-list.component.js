@@ -4,7 +4,7 @@ export default class ItemsList extends Component {
     render() {
         return (
             <div>
-                <p>You are on the Exercises List component!</p>
+                <p>You are on the Items List component!</p>
             </div>
         )
     }

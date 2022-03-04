@@ -4,7 +4,7 @@ export default class CreateUser extends Component {
     render() {
         return (
             <div>
-                <p>You are on the Create Exercise component!</p>
+                <p>You are on the Create Item component!</p>
             </div>
         )
     }
