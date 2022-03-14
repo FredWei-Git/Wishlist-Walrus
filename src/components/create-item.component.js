@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -28,11 +29,19 @@ export default class CreateItem extends Component {
     }
 
     // hardcode users
-    componentDidMount() {
-        this.setState({
-            users: ['test user'],
-            username: 'test user'
-        });
+    componentDidMount() { // lifecycle method that is called before react loads anything onto the webpage
+        axios.get('http://localhost:5000/users/')
+            .then(response => {
+                if (response.data.length > 0) {
+                    this.setState({
+                        users: response.data.map(user => user.username),
+                        username: response.data[0].username // set the default to the first username in the database
+                    })
+                }
+            })
+            .catch((error) => {
+                console.log(error);
+            })
     }
 
     // methods to update the state properties of this component
@@ -72,7 +81,17 @@ export default class CreateItem extends Component {
             date: this.state.date,
         };
         console.log(item);
-        window.location = '/'; // the location is updated so that it returns to the homepage
+        // send http post request to add item to database
+        axios.post('http://localhost:5000/items/add', item)
+            .then(res => console.log(res.data));
+        //window.location = '/'; // the location is updated so that it returns to the homepage
+        this.setState({
+            username: '',
+            description: '',
+            cost: 0,
+            link: '',
+            date: new Date(),
+        })
     }
 
     render() {
