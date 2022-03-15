@@ -30,16 +30,6 @@ const usersRouter = require('./routes/users');
 app.use('/items', itemsRouter);
 app.use('/users', usersRouter);
 
-// heroku 
-if (process.env.NODE_ENV === "production") {
-    // Serve any static files
-    app.use(express.static(path.join(__dirname, "build")));
-    // Handle React routing, return all requests to React app
-    app.get("*", function (req, res) {
-        res.sendFile(path.join(__dirname, "build", "index.html"));
-    });
-}
-
 // starts server/listening to a port
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
