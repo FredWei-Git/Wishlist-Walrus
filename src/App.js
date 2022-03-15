@@ -13,7 +13,7 @@ import CreateUser from "./components/create-user.component";
 function App() {
   return (
     <Router>
-      <div className="container"> {/*bootstrap container class helps format components better*/}
+      <div className="container color-wishlist"> {/*bootstrap container class helps format components better*/}
         <Navbar />
         <br />
         <Route path="/" exact component={ItemsList} />

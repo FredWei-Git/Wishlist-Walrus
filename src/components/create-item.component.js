@@ -97,10 +97,10 @@ export default class CreateItem extends Component {
     render() {
         return (
             <div>
-                <h3>Create New Item Log</h3>
+                <h3>Add New Item</h3>
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group">
-                        <label>Username: </label>
+                        <label>Recipient: </label>
                         <select ref="userInput"
                             required
                             className="form-control"
@@ -152,9 +152,9 @@ export default class CreateItem extends Component {
                             />
                         </div>
                     </div>
-
+                    <br/>
                     <div className="form-group">
-                        <input type="submit" value="Create Item Log" className="btn btn-primary" />
+                        <input type="submit" value="Add Item" class="btn btn-outline-primary" data-mdb-ripple-color="dark" />
                     </div>
                 </form>
             </div>

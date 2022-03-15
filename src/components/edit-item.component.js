@@ -99,10 +99,10 @@ export default class EditItem extends Component {
     render() {
         return (
             <div>
-                <h3>Edit Item Log</h3>
+                <h3>Edit Item</h3>
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group">
-                        <label>Username: </label>
+                        <label>Recipient: </label>
                         <select ref="userInput"
                             required
                             className="form-control"
@@ -154,9 +154,9 @@ export default class EditItem extends Component {
                             />
                         </div>
                     </div>
-
+                    <br/>
                     <div className="form-group">
-                        <input type="submit" value="Edit Exercise Log" className="btn btn-primary" />
+                        <input type="submit" value="Edit Item" class="btn btn-outline-primary" data-mdb-ripple-color="dark" />
                     </div>
                 </form>
             </div>

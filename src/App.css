@@ -2,3 +2,11 @@
   height: 75px;
   width: 75px;
 }
+
+.color-nav{
+  background-color: rgb(61, 230, 176);
+}
+
+.color-wishlist{
+  background-color: rgb(197, 236, 252);
+}

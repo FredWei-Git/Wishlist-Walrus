@@ -10,7 +10,7 @@ const Item = props => (
         <td>{props.item.link}</td>
         <td>{props.item.date.substring(0, 10)}</td>
         <td>
-            <Link to={"/edit/" + props.item._id}>edit</Link> | <a href="#" onClick={() => { props.deleteItem(props.item._id) }}>delete</a>
+            <Link to={"/edit/" + props.item._id}>Edit Item</Link> | <a href="#" onClick={() => { props.deleteItem(props.item._id) }}>Delete</a>
         </td>
     </tr>
 )
@@ -49,16 +49,16 @@ export default class ItemsList extends Component {
     render() {
         return (
             <div>
-                <h3>Logged Items</h3>
+                <h3>Wishlist</h3>
                 <table className="table">
                     <thead className="thead-light">
                         <tr>
-                            <th>Username</th>
+                            <th>Recipient</th>
                             <th>Description</th>
                             <th>Cost</th>
                             <th>Link</th>
                             <th>Date</th>
-                            <th>Actions</th>
+                            <th>Edit/Delete</th>
                         </tr>
                     </thead>
                     <tbody>
